@@ -21,7 +21,7 @@ export class HomePage implements OnInit {
      * @type {House[]}
      * @memberof HomePage
      */
-    casas: House[] = [];
+    westerosHouses: House[] = [];
 
     /**
      * @description Página actual.
@@ -48,7 +48,6 @@ export class HomePage implements OnInit {
      * @memberof HomePage
      */
     ngOnInit() {
-
         if (!navigator.onLine) {
             let alert = this.alertCtrl.create({
                 title: 'Trabajando Offline',
@@ -60,7 +59,6 @@ export class HomePage implements OnInit {
         }
 
         this.getAllHouses();
-
         if ('Notification' in window) {
             console.log('Api de notificaciones disponible, registrando cliente...');
             Notification.requestPermission((status: any) => {
@@ -70,7 +68,6 @@ export class HomePage implements OnInit {
         else {
             alert('No está disponible el api de notificaciones.');
         }
-
     }
 
     /**
@@ -79,8 +76,8 @@ export class HomePage implements OnInit {
      * @memberof HomePage
      */
     getAllHouses() {
-        this.apiSvc.getHousesPaged(1, 10).subscribe((result: House[]) => {
-            this.casas = result;
+        this.apiSvc.getHousesPaged(1, 10).subscribe((housesData: House[]) => {
+            this.westerosHouses = housesData;
         },
             (error: any) => {
                 console.log('Error en el método: getHouses.');
@@ -88,23 +85,23 @@ export class HomePage implements OnInit {
     }
 
     /**
-     * @description Scroll infinito.
+     * @description
      * @author Jhonathan Izquierdo Higuita
      * @param {any} infiniteScroll
      * @memberof HomePage
      */
-    doInfinite(infiniteScroll) {
+    doInfinite(infiniteScroll: any) {
 
         this.page = this.page + 1;
         setTimeout(() => {
-            this.apiSvc.getHousesPaged(this.page, 10).subscribe((result: House[]) => {
-                result.forEach(casa => {
-                    this.casas.push(casa);
+            this.apiSvc.getHousesPaged(this.page, 10).subscribe((housesData: House[]) => {
+                housesData.forEach(house => {
+                    this.westerosHouses.push(house);
                 });
+
                 infiniteScroll.complete();
             },
                 (error: any) => {
-                    console.log('Error en el método: getHouses - doInfinite.');
                     infiniteScroll.complete();
                     if (!navigator.onLine) {
                         let alert = this.alertCtrl.create({
@@ -112,6 +109,7 @@ export class HomePage implements OnInit {
                             subTitle: `No hay más datos guardados en caché.`,
                             buttons: ['Cerrar']
                         });
+
                         alert.present();
                     }
                     else {
@@ -120,6 +118,7 @@ export class HomePage implements OnInit {
                             subTitle: `No se pudieron obtener más datos.`,
                             buttons: ['Cerrar']
                         });
+
                         alert.present();
                     }
                 });
