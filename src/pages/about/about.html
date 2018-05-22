@@ -1,11 +1,24 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      About
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>
+            PWA - Notificaciones
+        </ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-
+    <ion-card>
+        <ion-card-header>
+            Push demo
+        </ion-card-header>
+        <ion-card-content>
+            <button ion-button (click)='showNotification()'>
+                <ion-icon name="notifications">&nbsp;</ion-icon>
+                Mostrar notificación
+            </button>
+            <br />
+            <br />
+            <p>Ejemplo de notificación Push local en una PWA.</p>
+        </ion-card-content>
+    </ion-card>
 </ion-content>
