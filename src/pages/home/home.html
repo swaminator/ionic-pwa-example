@@ -19,14 +19,14 @@
             <ng-template #noData>Lema: No hay datos.</ng-template>
             <p *ngIf="house.words else noData">Lema: {{house.words}}</p>
             <p>Títulos:
-                <span [hidden]="house.titles.length>0">No data</span>
+                <span [hidden]="house.titles.length>0">No hay datos.</span>
             </p>
             <ion-list>
                 <span ion-item *ngFor="let title of house.titles" [hidden]="!title">
                     {{title}}
                 </span>
                 <span ion-item *ngFor="let title of house.titles" [hidden]="title">
-                    No data.
+                    No hay datos.
                 </span>
             </ion-list>
         </ion-card-content>

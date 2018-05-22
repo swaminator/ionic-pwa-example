@@ -52,7 +52,7 @@ export class HomePage implements OnInit {
             let alert = this.alertCtrl.create({
                 title: 'Trabajando Offline',
                 subTitle: 'No hay red de datos disponible.',
-                buttons: ['Dismiss']
+                buttons: ['Cerrar']
             });
 
             alert.present();
