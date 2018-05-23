@@ -1,13 +1,13 @@
 {
-  "name": "Game of Thrones API PWA",
-  "short_name": "GoT-PWA",
-  "start_url": "index.html",
-  "display": "standalone",
-  "icons": [{
-    "src": "assets/imgs/Stark-icon.png",
-    "sizes": "128x128",
-    "type": "image/png"
-  }],
-  "background_color": "#4e8ef7",
-  "theme_color": "#4e8ef7"
+	"name": "Game of Thrones API PWA",
+	"short_name": "GoT-PWA",
+	"start_url": "index.html",
+	"display": "standalone",
+	"icons": [{
+		"src": "assets/imgs/Stark-icon.png",
+		"sizes": "128x128",
+		"type": "image/png"
+	}],
+	"background_color": "#4e8ef7",
+	"theme_color": "#4e8ef7"
 }

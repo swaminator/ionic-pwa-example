@@ -5,25 +5,24 @@ import { Platform } from 'ionic-angular';
 import { TabsPage } from '../pages/tabs/tabs';
 
 @Component({
-    templateUrl: 'app.html'
+	templateUrl: 'app.html'
 })
-export class MyApp {
+export class GotApp {
+	rootPage: any = TabsPage;
 
-    rootPage: any = TabsPage;
-
-    /**
-     * Creates an instance of MyApp.
-     * @param {Platform} platform
-     * @param {StatusBar} statusBar
-     * @param {SplashScreen} splashScreen
-     * @memberof MyApp
-     */
-    constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
-        platform.ready().then(() => {
-            // Okay, so the platform is ready and our plugins are available.
-            // Here you can do any higher level native things you might need.
-            statusBar.styleDefault();
-            splashScreen.hide();
-        });
-    }
+	/**
+	 * Creates an instance of GotApp.
+	 * @param {Platform} platform
+	 * @param {StatusBar} statusBar
+	 * @param {SplashScreen} splashScreen
+	 * @memberof GotApp
+	 */
+	constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+		platform.ready().then(() => {
+			// Okay, so the platform is ready and our plugins are available.
+			// Here you can do any higher level native things you might need.
+			statusBar.styleDefault();
+			splashScreen.hide();
+		});
+	}
 }

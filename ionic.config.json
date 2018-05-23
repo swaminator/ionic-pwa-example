@@ -1,6 +1,6 @@
 {
-  "name": "pwa-ionic",
-  "app_id": "",
-  "type": "ionic-angular",
-  "integrations": {}
+	"name": "pwa-ionic",
+	"app_id": "",
+	"type": "ionic-angular",
+	"integrations": {}
 }

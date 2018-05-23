@@ -1,40 +1,40 @@
 <ion-header>
-    <ion-navbar>
-        <ion-title>Progressive Web Apps</ion-title>
-    </ion-navbar>
+	<ion-navbar>
+		<ion-title>Progressive Web Apps</ion-title>
+	</ion-navbar>
 </ion-header>
 
 <ion-content padding>
-    <ion-card>
-        <ion-card-header style='background-color: #488aff;'>
-            <h2 style='font-weight:bolder;text-align: center;color: #FFF;'>Game of Thrones API - PWA</h2>
-        </ion-card-header>
-    </ion-card>
-    <ion-card *ngFor="let house of westerosHouses">
-        <ion-card-header>
-            <h3 style="font-weight: bold;" text-uppercase>{{house.name}}</h3>
-        </ion-card-header>
-        <ion-card-content>
-            <p>Región: {{house.region}}</p>
-            <ng-template #noData>Lema: No hay datos.</ng-template>
-            <p *ngIf="house.words else noData">Lema: {{house.words}}</p>
-            <p>Títulos:
-                <span [hidden]="house.titles.length>0">No hay datos.</span>
-            </p>
-            <ion-list>
-                <span ion-item *ngFor="let title of house.titles" [hidden]="!title">
-                    {{title}}
-                </span>
-                <span ion-item *ngFor="let title of house.titles" [hidden]="title">
-                    No hay datos.
-                </span>
-            </ion-list>
-        </ion-card-content>
-    </ion-card>
+	<ion-card>
+		<ion-card-header style='background-color: #488aff;'>
+			<h2 style='font-weight:bolder;text-align: center;color: #FFF;'>Game of Thrones API - PWA</h2>
+		</ion-card-header>
+	</ion-card>
+	<ion-card *ngFor="let house of westerosHouses">
+		<ion-card-header>
+			<h3 style="font-weight: bold;" text-uppercase>{{house.name}}</h3>
+		</ion-card-header>
+		<ion-card-content>
+			<p>Región: {{house.region}}</p>
+			<ng-template #noData>Lema: No hay datos.</ng-template>
+			<p *ngIf="house.words else noData">Lema: {{house.words}}</p>
+			<p>Títulos:
+				<span [hidden]="house.titles.length>0">No hay datos.</span>
+			</p>
+			<ion-list>
+				<span ion-item *ngFor="let title of house.titles" [hidden]="!title">
+					{{title}}
+				</span>
+				<span ion-item *ngFor="let title of house.titles" [hidden]="title">
+					No hay datos.
+				</span>
+			</ion-list>
+		</ion-card-content>
+	</ion-card>
 
-    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
-        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Cargando más datos">
-        </ion-infinite-scroll-content>
-    </ion-infinite-scroll>
+	<ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+		<ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Cargando más datos">
+		</ion-infinite-scroll-content>
+	</ion-infinite-scroll>
 
 </ion-content>

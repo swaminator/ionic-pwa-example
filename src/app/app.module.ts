@@ -1,5 +1,5 @@
 import { ErrorHandler, NgModule } from '@angular/core';
-import { HttpModule } from "@angular/http";
+import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -10,31 +10,13 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { ApiService } from '../services/apiservice';
-import { MyApp } from './app.component';
-
-
+import { GotApp } from './app.component';
 
 @NgModule({
-    declarations: [
-        MyApp,
-        AboutPage,
-        ContactPage,
-        HomePage,
-        TabsPage
-    ],
-    imports: [
-        BrowserModule,
-        HttpModule,
-        IonicModule.forRoot(MyApp)
-    ],
+    declarations: [GotApp, AboutPage, ContactPage, HomePage, TabsPage],
+    imports: [BrowserModule, HttpModule, IonicModule.forRoot(GotApp)],
     bootstrap: [IonicApp],
-    entryComponents: [
-        MyApp,
-        AboutPage,
-        ContactPage,
-        HomePage,
-        TabsPage
-    ],
+    entryComponents: [GotApp, AboutPage, ContactPage, HomePage, TabsPage],
     providers: [
         StatusBar,
         SplashScreen,
@@ -42,4 +24,4 @@ import { MyApp } from './app.component';
         { provide: ErrorHandler, useClass: IonicErrorHandler }
     ]
 })
-export class AppModule { }
+export class AppModule {}
