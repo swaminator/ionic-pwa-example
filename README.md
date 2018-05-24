@@ -5,3 +5,4 @@ An ionic 3 pwa example application that get data from Game Of Thrones Houses API
 *   Ionic 3 PWA based template.
 *   Push Notification Demo.
 *   Infinite scroll to load Houses data on demand.
+* 	Geolocation Demo.
