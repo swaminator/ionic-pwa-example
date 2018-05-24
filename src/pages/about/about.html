@@ -21,4 +21,21 @@
 			<p>Ejemplo de notificación Push local en una PWA.</p>
 		</ion-card-content>
 	</ion-card>
+	<ion-card>
+		<ion-card-header>
+			Geolocation Demo
+		</ion-card-header>
+		<ion-card-content>
+			<button ion-button (click)='getLocation()'>
+				<ion-icon name="locate">&nbsp;</ion-icon>
+				Obtener Localización Actual.
+			</button>
+			<br />
+			<br />
+			<p>Ejemplo de geolocalización en una PWA.</p>
+			<div>
+				<img [src]="mapImgUrl" alt="location map" [hidden]="mapImgUrl == ''"/>
+			</div>
+		</ion-card-content>
+	</ion-card>
 </ion-content>
